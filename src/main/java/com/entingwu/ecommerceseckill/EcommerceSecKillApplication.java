@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class EcommerceSecKillApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(EcommerceSecKillApplication.class, args);
     }
 
