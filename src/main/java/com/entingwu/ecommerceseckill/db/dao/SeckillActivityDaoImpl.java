@@ -24,7 +24,7 @@ public class SeckillActivityDaoImpl implements SeckillActivityDao {
     }
 
     @Override
-    public SeckillActivity querySeckillActivity(long activityId) {
+    public SeckillActivity querySeckillActivityById(long activityId) {
         return seckillActivityMapper.selectByPrimaryKey(activityId);
     }
 

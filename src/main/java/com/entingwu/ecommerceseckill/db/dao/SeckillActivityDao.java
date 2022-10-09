@@ -10,7 +10,7 @@ public interface SeckillActivityDao {
 
     public void insertSeckillActivity(SeckillActivity seckillActivity);
 
-    public SeckillActivity querySeckillActivity(long activityId);
+    public SeckillActivity querySeckillActivityById(long activityId);
 
     public void updateSeckillActivity(SeckillActivity seckillActivity);
 }
