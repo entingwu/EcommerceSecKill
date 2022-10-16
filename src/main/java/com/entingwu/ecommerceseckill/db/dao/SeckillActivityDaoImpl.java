@@ -2,11 +2,13 @@ package com.entingwu.ecommerceseckill.db.dao;
 
 import com.entingwu.ecommerceseckill.db.mappers.SeckillActivityMapper;
 import com.entingwu.ecommerceseckill.db.po.SeckillActivity;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
 import java.util.List;
 
+@Slf4j
 @Repository
 public class SeckillActivityDaoImpl implements SeckillActivityDao {
 
@@ -31,5 +33,15 @@ public class SeckillActivityDaoImpl implements SeckillActivityDao {
     @Override
     public void updateSeckillActivity(SeckillActivity seckillActivity) {
         seckillActivityMapper.updateByPrimaryKey(seckillActivity);
+    }
+
+    @Override
+    public boolean lockStock(long seckillActivityId) {
+        int result = seckillActivityMapper.lockStock(seckillActivityId);
+        if (result < 1) {
+            log.error("Failed to lock stock");
+            return false;
+        }
+        return true;
     }
 }
